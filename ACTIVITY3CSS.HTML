@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Blog Page</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:0;
+    line-height:1.6;
+}
+
+
+header{
+    background:#7bb2ff;
+    padding:20px;
+    text-align:center;
+}
+
+article{
+    padding:20px;
+}
+
+h2 {
+    color: #df00fc;
+}
+
+h3 {
+    color: #1d4ed8;
+}
+
+h4 {
+    color: #16a34a;
+}
+
+h5 {
+    color: #f59e0b;
+}
+
+h6 {
+    color: #7c3aed;
+}
+section{
+    margin-bottom:20px;
+}
+
+
+p{
+    font-size:18px;
+    line-height:1.5;
+    text-align:justify;
+}
+
+
+a:link{
+    color:blue;
+}
+
+a:visited{
+    color:purple;
+}
+
+a:hover{
+    color:red;
+}
+
+
+.highlight{
+    background:yellow;
+    font-weight:bold;
+    padding:5px;
+}
+
+
+#mainHeading{
+    color:darkblue;
+    background:lightblue;
+    text-align:center;
+    padding:10px;
+    border-radius:10px;
+}
+
+
+.color-box{
+    background:lightgreen;
+    padding:20px;
+    margin:20px 0;
+    border:2px solid green;
+}
+
+.gradient-box{
+    background:linear-gradient(to right,#4facfe,#00f2fe);
+    color:white;
+    padding:20px;
+    margin:20px 0;
+    border:2px solid #333;
+}
+
+
+img{
+    display:block;
+    margin:10px auto;
+    border:2px solid #ccc;
+    padding:5px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    color: rgb(245, 7, 7);
+}
+
+table,th,td{
+    border:1px solid black;
+}
+
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+form{
+    max-width:600px;
+    margin:auto;
+    padding:20px;
+    border:2px solid #ddd;
+}
+
+input[type=text],
+input[type=email],
+textarea,
+select{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    margin-bottom:10px;
+    box-sizing:border-box;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#f4f4f4;
+
+}
+</style>
+
+</head>
+
+<body id="top">
+
+<header>
+
+<h1>Welcome to My Blog Page</h1>
+<hr>
+
+<a href="#bottom">Go to Bottom ↓</a>
+
+<h1>BLOGGERIST</h1>
+
+<h2>Publication Date: August 3, 2026</h2>
+
+<h2>Author: Adriel Glinogo</h2>
+
+</header>
+
+<article>
+
+<section>
+
+<h2>Introduction to My Blog</h2>
+
+<p class="first">
+Welcome to my blog! This is a space where I share my thoughts, ideas,
+experiences, and discoveries on topics that interest me.
+Whether you're here to learn something new, find inspiration,
+or simply enjoy a good read, I hope you'll find content that is both
+informative and engaging.
+</p>
+
+<p class="second">
+My goal is to create articles that are easy to understand,
+practical, and enjoyable to read.
+I believe that learning and sharing knowledge can help us grow,
+and I'm excited to take this journey with you.
+</p>
+
+<p class="third">
+Thank you for visiting, and I hope you enjoy exploring my blog.
+Feel free to read, learn, and come back for more updates!
+</p>
+
+</section>
+
+<section>
+
+<h2>My Favorite Hobbies</h2>
+
+<h3>Ordered List</h3>
+
+<ol>
+<li>Watching Anime</li>
+<li>Gaming</li>
+<li>Listening to Music</li>
+<li>Watching Movies</li>
+</ol>
+
+<h3>Unordered List</h3>
+
+<ul>
+<li>Reading Books</li>
+<li>Traveling</li>
+<li>Coding</li>
+<li>Photography</li>
+</ul>
+
+</section>
+
+<h1 id="mainHeading">My Gallery</h1>
+
+<img src="https://th.bing.com/th/id/OIP._WVsc6JgHiyHb0R1Um_3aAHaEK?w=308&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+width="300" alt="Watching Anime">
+
+<h3 align="center">Watching Anime</h3>
+
+<img src="https://th.bing.com/th/id/OIP.dPgRuwQMDGL2UBP72Lz-DQHaE8?w=295&h=196&c=7&r=0&o=7&pid=1.7&rm=33"
+width="300" alt="Gaming">
+
+<h3 align="center">Gaming</h3>
+
+<img src="https://th.bing.com/th/id/OIP.CZUREcuscfUTW2d5AGqh5AHaE7?w=300&h=200&c=7&r=0&o=7&pid=1.7&rm=3"
+width="300" alt="Music">
+
+<h3 align="center">Listening to Music</h3>
+
+<h2>Class Schedule</h2>
+
+<table>
+
+<tr>
+<th>Subject</th>
+<th>Day</th>
+<th>Time</th>
+<th>Room</th>
+</tr>
+
+<tr>
+<td>Web Development</td>
+<td>Monday</td>
+<td>10:00 AM - 12:30 PM</td>
+<td>EBB 203</td>
+</tr>
+
+<tr>
+<td>Basic Statistics</td>
+<td>Tuesday</td>
+<td>8:00 AM - 10:00 AM</td>
+<td>EBB 301</td>
+</tr>
+
+<tr>
+<td>Specialized Technology</td>
+<td>Wednesday</td>
+<td>3:30 PM - 6:00 PM</td>
+<td>EBB 201</td>
+</tr>
+
+</table>
+
+<div class="color-box">
+<h2>Solid Background Section</h2>
+<p>
+This section demonstrates a background color using CSS.
+</p>
+</div>
+
+<div class="gradient-box">
+<h2>Gradient Background Section</h2>
+<p>
+This section demonstrates a linear gradient background.
+</p>
+</div>
+
+<h1>Feedback Form</h1>
+
+<form action="#" method="post">
+
+<label for="name">Full Name:</label>
+<input type="text" id="name" name="name" required>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required>
+
+<label for="comments">Comments:</label>
+<textarea id="comments" name="comments" rows="5" required></textarea>
+
+<h3>Skills</h3>
+
+<input type="checkbox" id="html" name="skills" value="HTML">
+<label for="html">HTML</label><br>
+
+<input type="checkbox" id="css" name="skills" value="CSS">
+<label for="css">CSS</label><br>
+
+<input type="checkbox" id="javascript" name="skills" value="JavaScript">
+<label for="javascript">JavaScript</label>
+
+<h3>Preferred Contact Method</h3>
+
+<input type="radio" id="phone" name="contact" value="Phone" required>
+<label for="phone">Phone</label><br>
+
+<input type="radio" id="emailContact" name="contact" value="Email">
+<label for="emailContact">Email</label>
+
+<br><br>
+
+<label for="country">Country</label>
+
+<select id="country" required>
+<option value="">--Select a Country--</option>
+<option>Philippines</option>
+<option>United States</option>
+<option>Canada</option>
+<option>Japan</option>
+<option>Australia</option>
+</select>
+
+<label for="profile">Upload Profile Picture</label>
+
+<input type="file" id="profile" accept="image/*" required>
+
+<br><br>
+
+<input type="submit" value="Submit Feedback">
+
+</form>
+
+</article>
+
+<footer id="bottom">
+
+<hr>
+
+<p>&copy; CREATED BY: ADRIEL D. GLINOGO</p>
+
+<a href="#top">Back to Top ↑</a>
+
+</footer>
+
+</body>
+</html>
