@@ -3,9 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document1</title>
+    <title>Adriel Pizza Haven</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            color: #333;
+            background-image: url("https://www.expedia.com/stories/wp-content/uploads/2021/09/Zoom_Positano_Italy.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            animation: pageFade 1s ease-in;
+        }
+
+        @keyframes pageFade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background: rgba(37, 161, 142, 0.9);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            animation: headerSlide 1s ease-out;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes headerSlide {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 40px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px white;
+            }
+
+            to {
+                text-shadow: 0 0 20px white, 0 0 30px #25f4ee;
+            }
+        }
+
+        header p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px #aaa;
+            animation: cardAppear 0.8s ease-out;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h2 {
+            color: #25a18e;
+            margin-top: 0;
+            transition: color 0.3s ease;
+        }
+
+        .card:hover h2 {
+            color: #16806f;
+        }
+
+        .card p {
+            line-height: 1.5;
+        }
+
+        .feedback {
+            background: white;
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #aaa;
+            animation: feedbackAppear 1s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feedback:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes feedbackAppear {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feedback h2 {
+            text-align: center;
+            color: #25a18e;
+            transition: transform 0.3s ease;
+        }
+
+        .feedback:hover h2 {
+            transform: scale(1.05);
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #25a18e;
+            box-shadow: 0 0 10px rgba(37, 161, 142, 0.5);
+            transform: scale(1.01);
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            background: #25a18e;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #16806f;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            transition: background 0.3s ease;
+        }
+
+        footer:hover {
+            background: #222;
+        }
+
+        @media (max-width: 700px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            .card:hover {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <header>
+        <h1>Welcome to Adriel Pizza Haven</h1>
+        <p>Explore our Delicious Pizzas and share your feedback.</p>
+    </header>
+
+    <div class="container">
+
+        <section class="cards">
+
+            <div class="card">
+                <img src="https://www.wellplated.com/wp-content/uploads/2024/05/Best-Mushroom-Pizza-Recipe.jpg" alt="Product 1">
+
+                <div class="card-content">
+                    <h2>Mushroom Pizza</h2>
+                    <p>
+                        Fresh mushrooms, melted cheese, and rich tomato sauce for a simple and tasty pizza.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.GUtzz3zgkImN3_ikBYuNfgHaE8?w=259&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Product 2">
+
+                <div class="card-content">
+                    <h2>Cheese Pizza</h2>
+                    <p>
+                        A classic pizza made with delicious tomato sauce
+                        and lots of melted cheese.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.5ss0Np4_jqHlZAkJsGsrTQHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Product 3">
+
+                <div class="card-content">
+                    <h2>Peperoni Pizza</h2>
+                    <p>
+                        A tasty pizza topped with flavorful pepperoni,
+                        tomato sauce, and melted cheese.
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="feedback">
+            <h2>Customer Feedback</h2>
+
+            <form>
+                <input
+                    type="text"
+                    placeholder="Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <select required>
+                    <option value="">Select Rating</option>
+                    <option>Excellent</option>
+                    <option>Good</option>
+                    <option>Average</option>
+                    <option>Poor</option>
+                </select>
+
+                <input
+                    type="text"
+                    placeholder="Favorite Product"
+                >
+
+                <textarea
+                    placeholder="Write your feedback here..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Submit Feedback
+                </button>
+            </form>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Adriel Pizza Haven.</p>
+    </footer>
+
 </body>
 </html>
