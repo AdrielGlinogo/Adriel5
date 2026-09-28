@@ -1,152 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adriel Pizza Haven</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>JavaScript Fundamentals Challenge</title>
 </head>
 
 <body>
 
-    <header>
-        <h1>Welcome to Adriel Pizza Haven</h1>
-        <p>Explore our Delicious Pizzas and share your feedback.</p>
-    </header>
+    <h1>JavaScript Fundamentals Challenge</h1>
 
-    <div class="container">
+    <label>Enter your name:</label>
+    <input type="text" id="name">
 
-        <section class="cards">
+    <br><br>
 
-            <div class="card">
-                <img src="https://www.wellplated.com/wp-content/uploads/2024/05/Best-Mushroom-Pizza-Recipe.jpg" alt="Mushroom Pizza">
+    <label>Enter your age:</label>
+    <input type="number" id="age">
 
-                <div class="card-content">
-                    <h2>Mushroom Pizza</h2>
-                    <p>
-                        Fresh mushrooms, melted cheese, and rich tomato sauce
-                        for a simple and tasty pizza.
-                    </p>
-                </div>
-            </div>
+    <br><br>
 
-            <div class="card">
-                <img src="https://th.bing.com/th/id/OIP.GUtzz3zgkImN3_ikBYuNfgHaE8?w=259&h=180&c=7&r=0&o=7&pid=1.7&rm=3" alt="Cheese Pizza">
+    <button onclick="showGreeting()">Submit</button>
 
-                <div class="card-content">
-                    <h2>Cheese Pizza</h2>
-                    <p>
-                        A classic pizza made with delicious tomato sauce
-                        and lots of melted cheese.
-                    </p>
-                </div>
-            </div>
+    <p id="output"></p>
 
-            <div class="card">
-                <img src="https://tse3.mm.bing.net/th/id/OIP.5ss0Np4_jqHlZAkJsGsrTQHaFj?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Pepperoni Pizza">
+    <script>
+        function showGreeting() {
+            // Get the user's name and age
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
 
-                <div class="card-content">
-                    <h2>Pepperoni Pizza</h2>
-                    <p>
-                        A tasty pizza topped with flavorful pepperoni,
-                        tomato sauce, and melted cheese.
-                    </p>
-                </div>
-            </div>
+            let message;
 
-        </section>
+            // Determine if the user is a minor or an adult
+            if (age < 18) {
+                message = "You are a minor.";
+            } else {
+                message = "You are an adult.";
+            }
 
-        <section class="feedback">
+            // Generate the personalized greeting
+            let greeting = "Hello, " + name + "! " + message;
 
-            <h2>Customer Feedback</h2>
-
-            <form>
-
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Name"
-                    required
-                >
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Email"
-                    required
-                >
-
-                <select id="category" required>
-                    <option value="">Select Category</option>
-                    <option>Pizza Quality</option>
-                    <option>Service</option>
-                    <option>Website Design</option>
-                </select>
-
-                <input
-                    type="number"
-                    id="rating"
-                    min="1"
-                    max="5"
-                    placeholder="Rating 1-5"
-                    required
-                >
-
-                <textarea
-                    id="message"
-                    placeholder="Write your feedback here..."
-                    required
-                ></textarea>
-
-                <button type="submit" id="submitBtn">
-                    Submit Feedback
-                </button>
-
-                <p id="errorMsg"></p>
-
-                <div id="outputContainer" class="hidden">
-
-                    <h3>Submission Summary</h3>
-
-                    <p>
-                        Output 1 (Name):
-                        <span id="outName"></span>
-                    </p>
-
-                    <p>
-                        Output 2 (Email):
-                        <span id="outEmail"></span>
-                    </p>
-
-                    <p>
-                        Output 3 (Category):
-                        <span id="outCategory"></span>
-                    </p>
-
-                    <p>
-                        Output 4 (Rating):
-                        <span id="outRating"></span>
-                    </p>
-
-                    <p>
-                        Output 5 (Message):
-                        <span id="outMessage"></span>
-                    </p>
-
-                </div>
-
-            </form>
-
-        </section>
-
-    </div>
-
-    <footer>
-        <p>© 2026 Adriel Pizza Haven.</p>
-    </footer>
-
-    <script src="script.js"></script>
+            // Display the information
+            document.getElementById("output").innerHTML = greeting;
+        }
+    </script>
 
 </body>
 </html>
