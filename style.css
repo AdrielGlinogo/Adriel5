@@ -12,6 +12,7 @@ body {
     color: #333;
 
     background-image: url("https://www.expedia.com/stories/wp-content/uploads/2021/09/Zoom_Positano_Italy.jpg");
+
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -20,6 +21,7 @@ body {
 }
 
 @keyframes pageFade {
+
     from {
         opacity: 0;
     }
@@ -27,160 +29,44 @@ body {
     to {
         opacity: 1;
     }
+
 }
 
-header {
-    background: rgba(37, 161, 142, 0.9);
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-
-    animation: headerSlide 1s ease-out;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+.hidden {
+    display: none !important;
 }
 
-@keyframes headerSlide {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
+.login-page {
+    min-height: 100vh;
 
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-header h1 {
-    margin: 0 0 10px;
-    font-size: 40px;
-
-    animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 5px white;
-    }
-
-    to {
-        text-shadow: 0 0 20px white, 0 0 30px #25f4ee;
-    }
-}
-
-header p {
-    margin: 0;
-    font-size: 18px;
-}
-
-.container {
-    width: 90%;
-    max-width: 1000px;
-    margin: 30px auto;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-
-    box-shadow: 0 3px 10px #aaa;
-
-    animation: cardAppear 0.8s ease-out;
-
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.card:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.card:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.card:nth-child(3) {
-    animation-delay: 0.6s;
-}
-
-@keyframes cardAppear {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.card:hover {
-    transform: translateY(-12px) scale(1.03);
-
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
-}
-
-.card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-
-    transition: transform 0.5s ease;
-}
-
-.card:hover img {
-    transform: scale(1.1);
-}
-
-.card-content {
     padding: 20px;
+
+    background: rgba(0, 0, 0, 0.25);
 }
 
-.card h2 {
-    color: #25a18e;
-    margin-top: 0;
+.login-box {
+    width: 100%;
+    max-width: 430px;
 
-    transition: color 0.3s ease;
+    background: rgba(255, 255, 255, 0.96);
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+
+    animation: loginAppear 0.8s ease-out;
 }
 
-.card:hover h2 {
-    color: #16806f;
-}
+@keyframes loginAppear {
 
-.card p {
-    line-height: 1.5;
-}
-
-.feedback {
-    background: white;
-
-    margin-top: 30px;
-    padding: 30px;
-
-    border-radius: 10px;
-
-    box-shadow: 0 3px 10px #aaa;
-
-    animation: feedbackAppear 1s ease-out;
-
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feedback:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
-@keyframes feedbackAppear {
     from {
         opacity: 0;
         transform: translateY(40px);
@@ -190,17 +76,25 @@ header p {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
-.feedback h2 {
-    text-align: center;
+.pizza-icon {
+    font-size: 55px;
+    margin-bottom: 5px;
+}
+
+.login-box h1 {
     color: #25a18e;
-
-    transition: transform 0.3s ease;
+    margin: 0 0 10px;
 }
 
-.feedback:hover h2 {
-    transform: scale(1.05);
+.login-box h2 {
+    margin: 10px 0;
+}
+
+.login-box p {
+    line-height: 1.5;
 }
 
 form {
@@ -212,10 +106,12 @@ input,
 select,
 textarea {
     width: 100%;
-    padding: 12px;
+
+    padding: 13px;
 
     border: 1px solid #ccc;
-    border-radius: 5px;
+
+    border-radius: 6px;
 
     font-size: 16px;
 
@@ -229,26 +125,22 @@ textarea:focus {
 
     border-color: #25a18e;
 
-    box-shadow: 0 0 10px rgba(37, 161, 142, 0.5);
-
-    transform: scale(1.01);
-}
-
-textarea {
-    height: 120px;
-    resize: vertical;
+    box-shadow: 0 0 8px rgba(37, 161, 142, 0.4);
 }
 
 button {
     background: #25a18e;
+
     color: white;
 
     border: none;
-    padding: 12px;
 
-    border-radius: 5px;
+    padding: 13px;
+
+    border-radius: 6px;
 
     font-size: 16px;
+
     cursor: pointer;
 
     transition: all 0.3s ease;
@@ -257,32 +149,333 @@ button {
 button:hover {
     background: #16806f;
 
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 
-    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
 }
 
 button:active {
-    transform: scale(0.95);
+    transform: scale(0.97);
+}
+
+#loginError,
+#orderError {
+    color: #d60000;
+
+    font-weight: bold;
+
+    margin: 5px 0;
+}
+
+header {
+    background: rgba(37, 161, 142, 0.93);
+
+    color: white;
+
+    padding: 30px 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+    animation: headerSlide 0.8s ease-out;
+}
+
+@keyframes headerSlide {
+
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+.header-content {
+    max-width: 1000px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+header h1 {
+    margin: 0 0 8px;
+
+    font-size: 38px;
+}
+
+header p {
+    margin: 5px 0;
+
+    font-size: 17px;
+}
+
+#welcomeUser {
+    max-width: 1000px;
+
+    margin: 15px auto 0;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.logout-btn {
+    background: #333;
+
+    width: auto;
+
+    padding: 10px 20px;
+}
+
+.logout-btn:hover {
+    background: #222;
+}
+
+.container {
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 35px auto;
+}
+
+.section-title {
+    background: rgba(255, 255, 255, 0.94);
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.section-title h2 {
+    color: #25a18e;
+
+    margin: 0 0 5px;
+}
+
+.section-title p {
+    margin: 0;
+}
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.card {
+    background: white;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 10px #aaa;
+
+    animation: cardAppear 0.8s ease-out;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card h2 {
+    color: #25a18e;
+
+    margin-top: 0;
+
+    margin-bottom: 10px;
+}
+
+.card p {
+    line-height: 1.5;
+}
+
+.price {
+    font-size: 21px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+.pizza-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 15px;
+}
+
+.orderBtn {
+    width: auto;
+
+    padding: 10px 20px;
+}
+
+.order-section {
+    background: white;
+
+    margin-top: 35px;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px #aaa;
+
+    animation: feedbackAppear 1s ease-out;
+}
+
+@keyframes feedbackAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+.order-section h2 {
+    text-align: center;
+
+    color: #25a18e;
+
+    margin-top: 0;
+}
+
+.form-description {
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+.order-section label {
+    font-weight: bold;
+}
+
+.place-order-btn {
+    margin-top: 5px;
+}
+
+#orderResult {
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: #e8f5e9;
+
+    border-left: 5px solid #25a18e;
+
+    border-radius: 8px;
+}
+
+#orderResult h3 {
+    color: #16806f;
+
+    margin-top: 0;
+}
+
+#orderResult p {
+    margin: 10px 0;
 }
 
 footer {
     background: #333;
+
     color: white;
 
     text-align: center;
 
     padding: 20px;
+
     margin-top: 30px;
-
-    transition: background 0.3s ease;
 }
 
-footer:hover {
-    background: #222;
+footer p {
+    margin: 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header-content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 600px) {
 
     .cards {
         grid-template-columns: 1fr;
@@ -292,7 +485,22 @@ footer:hover {
         font-size: 30px;
     }
 
-    .card:hover {
-        transform: translateY(-5px);
+    .login-box {
+        padding: 25px;
     }
+
+    .order-section {
+        padding: 20px;
+    }
+
+    .pizza-bottom {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .orderBtn {
+        width: 100%;
+    }
+
 }
