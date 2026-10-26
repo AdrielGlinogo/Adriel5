@@ -81,7 +81,7 @@ loginForm.addEventListener("submit", function(event) {
 
     welcomeUser.textContent =
         greeting +
-        " Welcome to Adriel Pizza Haven.";
+        " Welcome to Adriel Pizza Haven";
 
 });
 
